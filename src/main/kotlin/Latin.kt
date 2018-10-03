@@ -1,15 +1,11 @@
-
-
-//class Noun() : Word(PrincipalPart(), "") {
-//
-//}
-
-open class Word(val principalParts: Array<PrincipalPart>?, var inflectedEndings: Array<InflectedEnding>?) {
+open class Word(
+        var principalParts: Array<PrincipalPart>?,
+        var inflectedEndings: Array<InflectedEnding>?
+    ) {
     constructor() : this(null,null)
 }
 
-class PrincipalPart() {
-
+class PrincipalPart(var value: String) {
 }
 
 
@@ -21,22 +17,28 @@ class PrincipalPart() {
 
 
 interface InflectedEnding {
-
+    var value: String
     var gender: Gender
     var number: GrammaticalNumber
 
 }
 
-open class Conjugation(
-        override var gender: Gender,
-        override var number: GrammaticalNumber
-        ) : InflectedEnding {
+//class Noun() : Word(PrincipalPart(), "") {
+//}
 
-}
+//class Verb(): Word()
+//
+//
+//
+//open class Conjugation(
+//        override var gender: Gender,
+//        override var number: GrammaticalNumber
+//        ) : InflectedEnding {
+//}
 
 
 enum class Gender {
-    MASCULINE, FEMININE
+    MASCULINE, FEMININE, NEUTER
 }
 
 enum class GrammaticalNumber {
